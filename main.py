@@ -1,5 +1,6 @@
 import pyautogui
 import time
+import ImageGrab
 
 row1 = 420
 col1 = 820
@@ -41,3 +42,18 @@ if __name__ == '__main__':
 
     print(len(wordlist))
     print(wordlist)
+
+
+def checkLetterResult(row=1, col=1):
+    image = ImageGrab.grab()
+
+    color = image.getpixel((row1 + (row-1)*75, (col1 + (col-1)*75)))
+
+    if color == Green:
+        return 2
+    elif color == Yellow:
+        return 1
+    elif color == Purple:
+        return 0
+    else:
+        return "NEW" + str(color)

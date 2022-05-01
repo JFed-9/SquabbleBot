@@ -1,4 +1,5 @@
 import pyautogui
+import ImageGrab
 
 row1 = 420
 col1 = 820
